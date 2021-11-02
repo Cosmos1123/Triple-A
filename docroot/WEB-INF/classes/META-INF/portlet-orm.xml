@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="Htet_Lithan.com.test.model.impl.CustomerModelImpl">
+		<attributes>
+			<id name="customerId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="customerName" />
+			<basic name="customerEmail" />
+			<basic name="customerContact" />
+			<basic name="customerAddress" />
+			<basic name="payment" />
+			<basic name="time">
+				<column name="TIME_" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="servicesId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="Htet_Lithan.com.test.model.impl.ServicesModelImpl">
+		<attributes>
+			<id name="servicesId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="servicesName" />
+			<basic name="servicesPrice" />
+			<basic name="servicesDesc" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="Htet_Lithan.com.test.model.impl.CustomerImpl" name="Customer">
+		<table name="HS_Customer" />
+		<attributes />
+	</entity>
+	<entity class="Htet_Lithan.com.test.model.impl.ServicesImpl" name="Services">
+		<table name="HS_Services" />
+		<attributes />
+	</entity>
+</entity-mappings>

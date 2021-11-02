@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="Htet_Lithan.com.test">
+	<author>USER</author>
+	<namespace>HS</namespace>
+	<entity name="Customer" local-service="true" uuid="true">
+
+
+		<!-- PK fields -->
+
+		<column name="customerId" type="long" primary="true"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="customerName" type="String"></column>
+        <column name="customerEmail" type="String"></column>
+        <column name="customerContact" type="String"></column>
+        <column name="customerAddress" type="String"></column>
+        <column name="payment" type="String"></column>
+        <column name="time" type="Date"></column>
+        <column name="servicesId" type="long"></column>
+        <order>
+            <order-column name="customerName" order-by="desc"></order-column>
+        </order>
+        <finder name="CustomerFinder" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="Services" local-service="true" uuid="true">
+
+
+		<!-- PK fields -->
+
+		<column name="servicesId" type="long" primary="true"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="servicesName" type="String"></column>
+        <column name="servicesPrice" type="String"></column>
+        <column name="servicesDesc" type="String"></column>
+        <order>
+            <order-column name="servicesName" order-by="asc"></order-column>
+        </order>
+        <finder name="servicesFinder" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+	</entity>
+	<exceptions>
+        <exception>servicesName</exception>
+        <exception>servicesPrice</exception>
+        <exception>customerName</exception>
+        <exception>customerAddress</exception>
+    </exceptions>
+</service-builder>
